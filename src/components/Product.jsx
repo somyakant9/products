@@ -1,24 +1,20 @@
-import React from "react";
 
-const Product = () => {
+import React from "react";
+import styles from './Product.module.css'
+const Product = ({d,key}) => {
   // TODO: Remove below const and instead import them from chakra
-  const Text = () => <div />;
-  const Image = () => <div />;
-  const Box = () => <div />;
-  const Stack = () => <div />;
-  const Heading = () => <div />;
-  const Tag = () => <div />;
-  const TagLabel = () => <div />;
+
+
   return (
-    <Stack data-cy="product">
-      <Image data-cy="product-image" />
-      <Text data-cy="product-category"></Text>
-      <Tag>
-        <TagLabel data-cy="product-gender"></TagLabel>
-      </Tag>
-      <Heading data-cy="product-title"></Heading>
-      <Box data-cy="product-price"></Box>
-    </Stack>
+    <div data-cy="product" className={styles.main} key={key}>
+      <img data-cy="product-image" src ={d.imageSrc} alt="#" />
+      <p data-cy="product-category">{d.category} </p>
+      <div>
+        <p data-cy="product-gender">{d.gender}</p>
+      </div>
+      <h3 data-cy="product-title">{d.title}</h3>
+      <p data-cy="product-price">{d.price}</p>
+    </div>
   );
 };
 

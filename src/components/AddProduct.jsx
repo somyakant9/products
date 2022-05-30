@@ -2,36 +2,52 @@ import React from "react";
 
 const AddProduct = () => {
   // TODO: Remove below const and instead import them from chakra
-  const Button = () => <div />;
-  const Modal = () => <div />;
-  const ModalBody = () => <div />;
-  const Input = () => <div />;
-  const Select = () => <div />;
-  const RadioGroup = () => <div />;
-  const Radio = () => <div />;
+  // const [form, setForm] = React.useState({});
 
-  return (
-    <>
-      <Button my={4} data-cy="add-product-button"></Button>
-      <Modal>
-        <ModalBody pb={6}>
-          <Input data-cy="add-product-title" />
-          <Select data-cy="add-product-category">
-            <option data-cy="add-product-category-shirt"></option>
-            <option data-cy="add-product-category-pant"></option>
-            <option data-cy="add-product-category-jeans"></option>
-          </Select>
-          <RadioGroup data-cy="add-product-gender">
-            <Radio data-cy="add-product-gender-male"></Radio>
-            <Radio data-cy="add-product-gender-female"></Radio>
-            <Radio data-cy="add-product-gender-unisex"></Radio>
-          </RadioGroup>
-          <Input data-cy="add-product-price" />
-          <Button data-cy="add-product-submit-button"></Button>
-        </ModalBody>
-      </Modal>
-    </>
-  );
-};
+  // const handleChange = () => {
+  //   fetch("http://localhost:8080/products", {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json"
+  //     },
+  //     body: JSON.stringify(
+  //        ...form,
+  //       [title]=value ,
 
-export default AddProduct;
+
+  //     )
+  //   });
+
+    return (
+      <>
+        <button my={4} data-cy="add-product-button" >Add New Product</button>
+        <div>
+          <div pb={6}>
+            <form>
+              <label>Title</label>
+              <input data-cy="add-product-title" />
+              <label>Category</label>
+              <select data-cy="add-product-category">
+                <option data-cy="add-product-category-shirt" value="shirt">Shirt</option>
+                <option data-cy="add-product-category-pant" value="pant">Pant</option>
+                <option data-cy="add-product-category-jeans" value="jeans">Jeans</option>
+              </select>
+              <label>Gender</label>
+              <select data-cy="add-product-gender" >
+                <option data-cy="add-product-gender-male" value="male">Male</option>
+                <option data-cy="add-product-gender-female" value="female">Female</option>
+                <option data-cy="add-product-gender-unisex" value="unisex">unisex</option>
+              </select>
+              <label>Price</label>
+              <input data-cy="add-product-price" />
+              <button data-cy="add-product-submit-button" >Create</button>
+            </form>
+          </div>
+        </div>
+      </>
+    );
+  
+  };
+
+
+  export default AddProduct;
